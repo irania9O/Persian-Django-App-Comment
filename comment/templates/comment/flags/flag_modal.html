@@ -4,8 +4,8 @@
     <div class="comment-modal-dialog" role="document">
         <div class="comment-modal-content">
             <div class="modal-header">
-                <h5 class="comment-translatable modal-title">{% block title %}{% trans "Please select a reason for flagging" %}{% endblock title %}</h5>
-                <button class="modal-close-btn" aria-label="{% trans "Close" %}">
+                <h5 class="comment-translatable modal-title">{% block title %}{% trans "لطفاً دلیل نشانه گذاری را انتخاب کنید" %}{% endblock title %}</h5>
+                <button class="modal-close-btn" aria-label="{% trans "بستن" %}">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -19,7 +19,7 @@
                     {% endfor %}
                     <textarea class="flag-modal-info" rows="10" cols="10" name="info"></textarea>
                     <div class="flag-modal-footer modal-footer">
-                        {% trans "Flag" as flag %}
+                        {% trans "نشان کردن" as flag %}
                         <button type="submit" title="{{ flag }}" class="comment-translatable btn btn-sm btn-danger flag-modal-submit {% block flag_link_cls %}{% endblock flag_link_cls %}">{{ flag }}</button>
                     </div>
                 </form>

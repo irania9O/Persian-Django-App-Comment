@@ -1,9 +1,9 @@
 {% load i18n %}
-<nav id="pagination-nav" aria-label={% trans "Page navigation" %} class="mt-3 mb-5">
-    {% trans "first" as first %}
-    {% trans "last" as last %}
-    {% trans "Next" as Next %}
-    {% trans "Previous" as Previous %}
+<nav id="pagination-nav" aria-label={% trans "پیمایش صفحه" %} class="mt-3 mb-5">
+    {% trans "اولین" as first %}
+    {% trans "آخرین" as last %}
+    {% trans "بعدی" as Next %}
+    {% trans "قبلی" as Previous %}
     <ul class="pagination justify-content-center pagination-sm">
         {% if comments.has_previous %}
             <li class="{{li_cls}}">

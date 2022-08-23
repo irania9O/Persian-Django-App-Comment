@@ -5,7 +5,7 @@
     <div class="{% block header_div_cls %}border-bottom mb-4{% endblock header_div_cls %}">
         <strong class="{% block header_title_cls %}bb{% endblock header_title_cls %}"><span
                 class="js-comment-number">{% get_comments_count model_object user %}</span><span
-                class="comment-translatable"> {% trans "Comments" %}</span></strong>
+                class="comment-translatable"> {% trans "دیدگاه " %}</span></strong>
         {% if is_subscription_allowed %}
             <span class="{% block follow_icon_wrapper_cls %}float-right{% endblock follow_icon_wrapper_cls %}">{% include 'comment/follow/follow.html' with model_object=model_object btnId=0 %}</span>
         {% endif %}
@@ -14,11 +14,11 @@
         {% include "comment/comments/messages.html" %}
     {% endblock comment_messages %}
     <div class="js-comment comment mb-5">
-        {% trans 'comment on this post...' as parent_placeholder %}
+        {% trans 'ديدگاهی بنویسید...' as parent_placeholder %}
         {% include 'comment/comments/create_comment.html' with placeholder=parent_placeholder comment=None %}
     </div>
     <div class="mt-5">
-        {% trans 'reply to this comment...' as child_placeholder %}
+        {% trans 'پاسخی بنویسید...' as child_placeholder %}
         {% for comment in comments %}
             {% include 'comment/comments/parent_comment.html' with placeholder=child_placeholder %}
         {% endfor %}

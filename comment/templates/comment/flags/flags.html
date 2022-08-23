@@ -5,7 +5,7 @@
     {% include "comment/flags/flag_icon.html" %}
 </span>
 {% else %}
-<a href="{{ login_url }}/?next={{ request.build_absolute_uri }}" title="{% trans "flag" %}">
+<a href="{{ login_url }}/?next={{ request.build_absolute_uri }}" title="{% trans "نشان کردن" %}">
     {% include "comment/flags/flag_icon.html" %}
 </a>
 {% endif %}

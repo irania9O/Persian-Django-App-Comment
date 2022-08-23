@@ -2,7 +2,7 @@
 <div class="js-comment-reactions mt-2">
     <span class="js-like-number text-dark">{{ comment.likes }}</span>
     {% url 'comment:react' pk=comment.id reaction='like' as like_url %}
-    <a title="{% trans "like" %}" class="{% block like_link_cls %} {% endblock like_link_cls %}
+    <a title="{% trans "پسندیدن" %}" class="{% block like_link_cls %} {% endblock like_link_cls %}
         {% if user.is_authenticated %}
         js-comment-reaction" href="{{ like_url }}"
         {% else %}
@@ -11,9 +11,9 @@
     >
         {% include "comment/reactions/like_icon.html" %}
     </a>
-    <span class="ml-4 js-dislike-number text-dark">{{ comment.dislikes }}</span>
+    <span class="mr-4 js-dislike-number text-dark">{{ comment.dislikes }}</span>
     {% url 'comment:react' pk=comment.id reaction='dislike' as dislike_url %}
-    <a title="{% trans "dislike" %}" class="{% block dislike_link_cls %} {% endblock dislike_link_cls %}
+    <a title="{% trans "عدم پسند" %}" class="{% block dislike_link_cls %} {% endblock dislike_link_cls %}
         {% if user.is_authenticated %}
         js-comment-reaction" href="{{ dislike_url }}"
         {% else %}

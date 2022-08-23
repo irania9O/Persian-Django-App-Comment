@@ -17,7 +17,7 @@
             <div id="buttonPlaceholder" class="{% block submit_button_wrapper_cls %}col-sm-3 col-md-2 px-2 m-3 m-sm-0{% endblock submit_button_wrapper_cls %}">
                 <button disabled class="js-comment-btn {% block submit_button_cls %}btn btn-outline-success btn-block btn-sm{% endblock submit_button_cls %}"
                         type="submit" name="form_type" value="{% if comment %}child{% else %}parent{% endif %}" data-email-required="{% if user.is_anonymous and is_anonymous_allowed %}true{% endif %}">
-                    {% if comment %}{% trans "Reply" %}{% else %}{% trans "Comment" %}{% endif %}
+                    {% if comment %}{% trans "پاسخ" %}{% else %}{% trans "ارسال" %}{% endif %}
                 </button>
             </div>
         </div>
@@ -28,18 +28,19 @@
     <div class="d-flex mb-3">
         {% if is_anonymous_allowed %}
             <p class="text-muted{% if comment %} h7{% endif %}">
-                {% trans "Comment Anonymously or" %}
+                {% trans "برای دیدگاه ناشناس" %}
                 <a class="text-success" href="{{login_url}}?next={{request.path}}">
-                    <em>{% trans "Login" %}</em>
+                    <em>{% trans "وارد" %}</em>
                 </a>
-                {% trans "to keep your conversations intact" %}
+                {% trans "تا مکالمات خود را دست نخورده نگه دارید" %}
             </p>
         {% else %}
             <p class="text-muted {% if comment %}h7{% endif %}">
+                {% trans "برای ارسال دیدگاه" %}
                 <a class="text-success" href="{{login_url}}?next={{request.path}}">
-                    <em>{% trans "Login" %}</em>
+                    <em>{% trans "وارد شوید." %}</em>
                 </a>
-                {% trans "to join the discussion" %}
+                
             </p>
         {% endif %}
         {% if oauth %}

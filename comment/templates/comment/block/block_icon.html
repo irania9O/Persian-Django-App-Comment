@@ -1,7 +1,7 @@
 {% load comment_tags %}
 {% load i18n %}
 <button
-    title="{% if comment|is_user_blocked %}{% trans 'Unblock user' %}{% else %}{% trans 'Block this user' %}{% endif %}"
+    title="{% if comment|is_user_blocked %}{% trans 'خارج کردن این کاربر از مسدودیت' %}{% else %}{% trans 'مسدود کردن این کاربر' %}{% endif %}"
     class="js-comment-block {% block block_btn_cls %}btn btn-link{% endblock block_btn_cls %}"
     data-comment_id="{{ comment.id }}"
 >

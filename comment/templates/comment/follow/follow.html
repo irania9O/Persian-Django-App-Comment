@@ -6,7 +6,7 @@
     {% include "comment/follow/follow_icon.html" %}
 </span>
 {% else %}
-<a class="js-comment-follow>" href="{{ login_url }}/?next={{ request.build_absolute_uri }}" title="{% trans "follow" %}">
+<a class="js-comment-follow>" href="{{ login_url }}/?next={{ request.build_absolute_uri }}" title="{% trans "دنبال کردن" %}">
     {% include "comment/follow/follow_icon.html" %}
 </a>
 {% endif %}

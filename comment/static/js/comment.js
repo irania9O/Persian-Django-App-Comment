@@ -221,9 +221,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 let replyNum = Number(replyNumberElement.innerText) + 1;
                 replyNumberElement.textContent = replyNum.toString();
                 if (replyNum > 1) {
-                    reply.textContent = gettext("Replies");
+                    reply.textContent = gettext("پاسخ ها");
                 } else {
-                    reply.textContent = gettext("Reply");
+                    reply.textContent = gettext("پاسخ");
                 }
                 commentCount(1);
                 // update followBtn
@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.history.replaceState({}, document.title, clean_uri);
             }
         }).catch((error) => {
-            alert(gettext("Unable to post your comment!, please try again"));
+            alert(gettext("عدم توانایی برای ارسال نظر شما!, لطفاً مجدداً تلاش کنید."));
             console.error(error);
         });
     };
@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
             textAreaElement.value = value;
             textAreaElement.setAttribute("style", "height: " + textAreaElement.scrollHeight + "px;");
         }).catch((error) => {
-            alert(gettext("You can't edit this comment"));
+            alert(gettext("شما نمی توانید ایت دیدگاه را ویرایش کنید."));
             console.error(error);
         });
     };
@@ -294,7 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let updatedContentElement = stringToDom(result.data, '.js-updated-comment');
             form.parentElement.replaceWith(updatedContentElement);
         }).catch((error) => {
-            alert(gettext("Modification didn't take effect!, please try again"));
+            alert(gettext("اصلاح اعمال نشد!, لطفاً مجدداً تلاش کنید."));
             console.error(error);
         });
     };
@@ -343,7 +343,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let modalContent = deleteModal.querySelector('.comment-modal-content');
             modalContent.innerHTML = result.data;
         }).catch((error) => {
-            alert(gettext("Deletion cannot be performed!, please try again"));
+            alert(gettext("حذف قابل انجام نیست!, لطفاً مجدداً تلاش کنید."));
             console.error(error);
         });
     };
@@ -380,9 +380,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 replyNumberElement.textContent = replyNum.toString();
 
                 if (replyNum > 1) {
-                    replyLinkElement.textContent = gettext("Replies");
+                    replyLinkElement.textContent = gettext("پاسخ ها");
                 } else {
-                    replyLinkElement.textContent = gettext("Reply");
+                    replyLinkElement.textContent = gettext("پاسخ");
                 }
                 // update total count of comments
                 commentCount(-1);
@@ -390,7 +390,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hideModal(deleteModal);
             commentElement.remove();
         }).catch((error) => {
-            alert(gettext("Unable to delete your comment!, please try again"));
+            alert(gettext("عدم توانایی برای حذف دیدگاه شما!, لطفاً مجدداً تلاش کنید."));
             console.error(error);
         });
     };
@@ -456,7 +456,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         }).catch((error) => {
-            alert(gettext("Reaction couldn't be processed!, please try again"));
+            alert(gettext("واکنش شما محاسبه نشد!, لطفاً مجدداً تلاش کنید."));
             console.error(error);
         });
     };
@@ -493,19 +493,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (result.data.following) {
                     followButton.querySelector('.comment-follow-icon').classList.add('user-has-followed');
                     followButton.querySelector('span').setAttribute('title', 'Unfollow this thread');
-                    const msg = gettext(`You are now subscribing "${result.data.model_object}"`);
+                    const msg = gettext(`اکنون دنبال می شود."${result.data.model_object}"`);
                     createInfoElement(infoElement, 'success', msg);
                     hideModal(followModal);
                 } else {
                     followButton.querySelector('.comment-follow-icon').classList.remove('user-has-followed');
                     followButton.querySelector('span').setAttribute('title', 'Follow this thread');
-                    const msg = gettext(`"${result.data.model_object}" is now unsubscribed`);
+                    const msg = gettext(`"${result.data.model_object}" اکنون دنبال نمی شود`);
                     createInfoElement(infoElement, 'success', msg);
                     hideModal(followModal);
                 }
             }
         }).catch((error) => {
-            alert(gettext("Subscription couldn't be processed!, please try again"));
+            alert(gettext("دنبال کردن انجام نشد!, لطفاً مجدداً تلاش کنید."));
             console.error(error);
         });
     };
@@ -549,14 +549,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 msg = result.error.detail;
             } else if (result.data) {
                 let state = result.data.blocked ? 'blocked' : 'unblocked';
-                msg = gettext(`User ${result.data.blocked_user} has been successfully ${state}`);
+                msg = gettext(`کاربر ${result.data.blocked_user} با موفقیت مسدود شد ${state}`);
                 updateBlockedUserComments(result.data);
                 form.querySelector('textarea').value = '';
             }
             createInfoElement(infoElement, 'success', msg);
             hideModal(blockModal);
         }).catch((error) => {
-            alert(gettext("Blocking this user couldn't be processed!, please try again"));
+            alert(gettext("مسدود کردن انجام نشد!, لطفاً مجدداً تلاش کنید"));
             console.error(error);
         });
     };
@@ -669,7 +669,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 createInfoElement(flagButton.closest('.js-parent-comment'), result.data.status, result.msg);
             }
         }).catch((error) => {
-            alert(gettext("Flagging couldn't be processed!, please try again"));
+            alert(gettext("نشانه گذاری انجام نشد!, لطفاً مجدداً تلاش کنید"));
             console.error(error);
         });
     };
@@ -715,9 +715,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleText = readMoreButton => {
         readMoreButton.previousElementSibling.classList.toggle('d-none');
         if (readMoreButton.previousElementSibling.classList.contains('d-none')) {
-            readMoreButton.innerHTML = gettext("read more ...");
+            readMoreButton.innerHTML = gettext("بیشتر ...");
         } else {
-            readMoreButton.innerHTML = gettext("read less");
+            readMoreButton.innerHTML = gettext("کوتاه کردن دیدگاه");
         }
     };
 
@@ -750,26 +750,26 @@ document.addEventListener('DOMContentLoaded', () => {
             if (state === 3) {
                 changeStateButton.firstElementChild.classList.toggle("flag-rejected");
                 title = changeStateButton.firstElementChild.classList.contains("flag-rejected")
-                    ? gettext('Flag rejected')
-                    : gettext('Reject the flag');
+                    ? gettext('نشانه گذاری')
+                    : gettext('حذف نشانه');
                 const contentModifiedBtn = changeStateButton.parentElement.querySelector('.js-flag-resolve');
                 if (result.data.state === 3) {
                     if (contentModifiedBtn) {
                         contentModifiedBtn.firstElementChild.classList.remove("flag-resolved");
-                        contentModifiedBtn.setAttribute('title', gettext('Resolve the flag'));
+                        contentModifiedBtn.setAttribute('title', gettext('پاک کردن نشانه'));
                     }
                     commentBodyElement.classList.remove('flagged-comment');
                 }
             } else if (state === 4) {
                 changeStateButton.firstElementChild.classList.toggle("flag-resolved");
                 title = changeStateButton.firstElementChild.classList.contains("flag-resolved")
-                    ? gettext('Flag resolved')
-                    : gettext('Resolve the flag');
+                    ? gettext('نشانه گذاری انجام شد.')
+                    : gettext('حل کردن نشانه');
                 let rejectBtn = changeStateButton.parentElement.querySelector('.js-flag-reject');
                 if (result.data.state === 4) {
                     if (rejectBtn) {
                         rejectBtn.firstElementChild.classList.remove("flag-rejected");
-                        rejectBtn.setAttribute('title', gettext('Reject the flag'));
+                        rejectBtn.setAttribute('title', gettext('رد کردن نشانه'));
                     }
                     commentBodyElement.classList.remove('flagged-comment');
                 }

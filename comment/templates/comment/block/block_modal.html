@@ -3,8 +3,8 @@
     <div class="comment-modal-dialog" role="document">
         <div class="comment-modal-content">
             <div class="modal-header">
-                <h5 class="modal-title comment-translatable">{% block title %}{% trans "Are you sure you want to block this user?" %}{% endblock title %}</h5>
-                <button class="modal-close-btn comment-translatable" aria-label="{% trans "Close" %}">
+                <h5 class="modal-title comment-translatable">{% block title %}{% trans "آیا از مسدود کردن این کاربر مطمنید؟" %}{% endblock title %}</h5>
+                <button class="modal-close-btn comment-translatable" aria-label="{% trans "بستن" %}">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -13,7 +13,7 @@
                 {% block reason_input %}
                     <div class="row">
                         <div class="col-3">
-                            <label for="reason" class="comment-translatable"> {% trans "Reason" %} >
+                            <label for="reason" class="comment-translatable"> {% trans "دلیل" %} >
                         </div>
                         <div class="col-9">
                             <textarea id="reason" class="form-control mr-2 w-100" rows="3" name="reason"></textarea>
@@ -24,7 +24,7 @@
                 {% endblock reason_input %}
                     <br>
                     <div class="modal-footer">
-                        {% trans "Block" as block %}
+                        {% trans "مسدود کردن" as block %}
                         <button type="submit"
                                 title="{{ block }}"
                                 class="btn btn-sm btn-danger block-modal-submit {% block block_btn_extra_cls %}{% endblock block_btn_extra_cls %}"

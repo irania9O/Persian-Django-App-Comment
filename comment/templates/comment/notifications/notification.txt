@@ -1,18 +1,18 @@
 {% load i18n %}
-{% trans "Hey" %} {{receiver}}{% trans "," %}
+{% trans "سلام" %} {{receiver}}{% trans "،" %}
 
-{{comment.user}} {% trans "has added a comment at" %} {{ comment.posted }}, {% trans "to" %} {{thread_name}}.
+{{comment.user}} {% trans "همانطور که یک دیدگاه در اضافه شده است" %} {{ comment.posted }}, {% trans "به" %} {{thread_name}}.
 
---- {% trans "Comment" %}: ---
+--- {% trans "دیدگاه: " %}: ---
 {{ comment.content }}
 
 http://{{ site.domain }}{{ comment.content_object.get_absolute_url }}
 ----------------
 
 
-{% trans "If clicking does not work, you can also copy and paste the address into your browser's address window" %}.
-{% trans "Thanks for your comment!" %}
+{% trans "اگر کلیک کردن کار نکرد، می توانید آدرس را نیز در پنجره آدرس مرورگر خود کپی کرده و جایگذاری کنید" %}.
+{% trans "بابت دیدگاهتان متشکرم!" %}
 
 ----------------
-{% trans "Kind regards," %}
+{% trans "با احترام،" %}
 {{ site }}

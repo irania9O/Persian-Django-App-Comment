@@ -1,21 +1,21 @@
 {% load i18n %}
-{% trans "Hey there," %}
+{% trans "سلام،" %}
 
-{% trans "You or someone on behalf of you have requested to post a comment at" %} {{ comment.posted }}, {% trans "to the following URL" %}.
+{% trans "شما یا شخصی از طرف شما درخواست کرده اید که دیدگاه خود را در این آدرس ارسال کنید" %} {{ comment.posted }}, {% trans "to the following URL" %}.
 
 URL:  http://{{ site.domain }}{{ comment.content_object.get_absolute_url }}
 
---- {% trans "Comment" %}: ---
+--- {% trans "دیدگاه: " %}: ---
 {{ comment.content }}
 ----------------
 
-{% trans "If you do not wish to post the comment, please ignore this message or report an incident to" %} {{ contact|safe }}. {% trans "Otherwise click on the link below to confirm the comment" %}.
+{% trans "اگر مایل به ارسال دیدگاه نیستید، لطفاً این پیام را نادیده بگیرید یا یک حادثه را به آن گزارش دهید" %} {{ contact|safe }}. {% trans "در غیر این صورت برای تایید دیدگاه روی لینک زیر کلیک کنید" %}.
 
 http://{{ site.domain }}{{ confirmation_url }}
 
-{% trans "If clicking does not work, you can also copy and paste the address into your browser's address window" %}.
-{% trans "Thanks for your comment!" %}
+{% trans "اگر کلیک کردن کار نکرد، می توانید آدرس را نیز در پنجره آدرس مرورگر خود کپی کرده و جایگذاری کنید" %}.
+{% trans "بابت دیدگاهتان متشکرم!" %}
 
 --
-{% trans "Kind regards," %}
+{% trans "با احترام،" %}
 {{ site }}

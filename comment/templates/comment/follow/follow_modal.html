@@ -4,8 +4,8 @@
     <div class="comment-modal-dialog" role="document">
         <div class="comment-modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">{% block title %}{% trans "Please insert your email to follow this thread" %}{% endblock title %}</h5>
-                <button class="modal-close-btn" aria-label="{% trans "Close" %}">
+                <h5 class="modal-title">{% block title %}{% trans "لطفا ایمیل خود را برای دنبال کردن این موضوع وارد کنید" %}{% endblock title %}</h5>
+                <button class="modal-close-btn" aria-label="{% trans "بستن" %}">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -25,7 +25,7 @@
                 {% endblock email_input %}
                     <br>
                     <div class="follow-modal-footer modal-footer">
-                        {% trans "Follow" as follow %}
+                        {% trans "دنبال کردن" as follow %}
                         <button type="submit"
                                 title="{{ follow }}"
                                 class="btn btn-sm btn-success follow-modal-submit {% block follow_btn_extra_cls %}{% endblock follow_btn_extra_cls %}"
